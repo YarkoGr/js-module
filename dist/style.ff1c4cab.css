@@ -1,5 +1,81 @@
-h1 {
-  color: red;
+/* Screens */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+a {
+  display: inline-block;
+}
+
+.start-page {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  min-height: 100vh;
+  background: url(/bg.c04a5f46.jpg) no-repeat center;
+  background-size: cover;
+  text-align: center;
+}
+.start-page__title {
+  font-size: 36px;
+  font-weight: 700;
+  color: white;
+  background-color: teal;
+}
+.start-page__list {
+  min-height: 80vh;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.start-page__list-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  background-color: teal;
+  border: 2px solid teal;
+  transition: background-color 0.3s ease-in;
+}
+.start-page__list-item:hover {
+  background-color: #fff;
+  color: teal;
+}
+.start-page__list-item:last-child {
+  margin-right: 0;
+}
+.start-page__list-item-text {
+  display: block;
+  font-size: 20px;
+  font-weight: 400;
+  color: white;
+}
+.start-page__list-item-btn {
+  padding: 20px 35px;
+  text-decoration: none;
+  font-size: 26px;
+  font-weight: 700;
+  color: white;
+  transition: color 0.5s ease;
+}
+.start-page__list-item-btn:hover {
+  color: teal;
 }
 
 /*# sourceMappingURL=/style.ff1c4cab.css.map */

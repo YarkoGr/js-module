@@ -117,82 +117,84 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"index.js":[function(require,module,exports) {
-var title = document.getElementById("test"); //вітання з юзером ))
+})({"js/index.js":[function(require,module,exports) {
+document.getElementById("btn1").onclick = function btnOne() {
+  //1.вітання з юзером ))
+  var name = prompt("Enter your name please");
+  alert("Hello ".concat(name)); //2.скільки тобі років
 
-var name = prompt("Enter your name please");
-alert("Hello ".concat(name)); //скільки тобі років
+  var year = prompt("Please, enter your year of birthday");
+  var howOld = 2020 - year;
+  alert("You have ".concat(howOld));
+  console.log(howOld); //3.периметр квадрата
 
-var year = prompt("Please, enter your year of birthday");
-var howOld = 2020 - year;
-alert("You have ".concat(howOld));
-console.log(howOld); //периметр квадрата
+  var londSideCube = prompt("input length side of square");
+  var perimetr = londSideCube * 4;
+  alert("perimetr = ".concat(perimetr)); //4.площа кола
 
-var londSideCube = prompt("input length side of square");
-var perimetr = londSideCube * 4;
-alert("perimetr = ".concat(perimetr)); //площа кола
+  var longCircle = prompt("input length of circle");
+  var areaOfCircle = 3.14 * Math.pow(longCircle, 2);
+  alert("area = ".concat(areaOfCircle)); //5.дистанція+час=швидкість руху
 
-var longCircle = prompt("input length of circle");
-var areaOfCircle = 3.14 * Math.pow(longCircle, 2);
-alert("area = ".concat(areaOfCircle)); //дистанція+час=швидкість руху
+  var distance = prompt("What distance do you need(km)");
+  var time = prompt("How many time do you have(hour)");
+  var countKmPerHour = distance / time;
+  alert("You must move ".concat(countKmPerHour, " km/hour")); //6.конверт долар => євро
 
-var distance = prompt("What distance do you need(km)");
-var time = prompt("How many time do you have(hour)");
-var countKmPerHour = distance / time;
-alert("You must move ".concat(countKmPerHour, " km/hour")); //конверт долар => євро
+  var dollars = prompt("How many dollars do you whant convert to euro");
+  var crosscurs = 1.32;
+  var euro = dollars * crosscurs;
+  alert("you would be have ".concat(euro, " euro")); //7.прорахунок кількості файлів для флешок
 
-var dollars = prompt("How many dollars do you whant convert to euro");
-var crosscurs = 1.32;
-var euro = dollars * crosscurs;
-alert("you would be have ".concat(euro, " euro")); //прорахунок кількості файлів для флешок
+  var memoryFlashCard = prompt("How many GB has your flash card");
+  var fileSize = 820;
+  var countFiles = memoryFlashCard * 1000 / fileSize;
+  alert("You can record ".concat(parseInt(countFiles), " files with size 820mb")); //8.кількість шоколаду на певну суму зі здачею
 
-var memoryFlashCard = prompt("How many GB has your flash card");
-var fileSize = 820;
-var countFiles = memoryFlashCard * 1000 / fileSize;
-alert("You can record ".concat(parseInt(countFiles), " files with size 820mb")); //кількість шоколаду на певну суму зі здачею
+  var money = prompt("How many money dou have");
+  var cost = prompt("What is the price of chokolate");
+  var amount = money / cost;
+  var change = money % cost;
 
-var money = prompt("How many money dou have");
-var cost = prompt("What is the price of chokolate");
-var amount = money / cost;
-var change = money % cost;
-
-if (amount > 1) {
-  alert("You can by ".concat(parseInt(amount), " chokolates and have ").concat(change, " change"));
-} else {
-  alert("You can't by");
-} //дзеркальне відображення числа
+  if (amount > 1) {
+    alert("You can by ".concat(parseInt(amount), " chokolates and have ").concat(change, " change"));
+  } else {
+    alert("You can't by");
+  } //9.дзеркальне відображення числа
 
 
-var numberForRevers = prompt("Enter number for revers");
-var x = numberForRevers;
-var revers = 0;
+  var numberForRevers = prompt("Enter number for revers");
+  var x = numberForRevers;
+  var revers = 0;
 
-while (x > 0) {
-  var y = x % 10;
-  revers = revers * 10 + y;
-  x = parseInt(x / 10);
-}
+  while (x > 0) {
+    var y = x % 10;
+    revers = revers * 10 + y;
+    x = parseInt(x / 10);
+  }
 
-alert("Yor revers number ".concat(revers)); // //алгоритм-початок циклу while (x > 0)
-// x = 123 //допустим ввели 123
-// y = 0
-// y = 123 % 10 = 3             //перша ітерація
-// revers=((0 * 10) +3) = 3
-// x = parseInt (123 / 10) = 12
-// x = 12
-// y = 12 % 10 = 2               //друга ітерація
-// revers=((3 * 10) +2) = 32
-// x = parseInt (12 / 10) = 1
-// x = 1
-// y = 1 % 10 = 1               //третя ітерація
-// revers=((32 * 10) +1) = 321
-// x = parseInt (1 / 10) = 0 //кінець циклу while (x > 0)
-//розрахунок депозиту
+  alert("Yor revers number ".concat(revers)); // //алгоритм-початок циклу while (x > 0)
+  // x = 123 //допустим ввели 123
+  // y = 0
+  // y = 123 % 10 = 3             //перша ітерація
+  // revers=((0 * 10) +3) = 3
+  // x = parseInt (123 / 10) = 12
+  // x = 12
+  // y = 12 % 10 = 2               //друга ітерація
+  // revers=((3 * 10) +2) = 32
+  // x = parseInt (12 / 10) = 1
+  // x = 1
+  // y = 1 % 10 = 1               //третя ітерація
+  // revers=((32 * 10) +1) = 321
+  // x = parseInt (1 / 10) = 0 //кінець циклу while (x > 0)
+  //10.розрахунок депозиту
 
-var sumDeposit = prompt("insert your sum deposit");
-var month = prompt("insert how many month");
-var moneyFromDeposit = sumDeposit / 12 * 0.05 * month;
-alert("your earn money ".concat(moneyFromDeposit));
+  var sumDeposit = prompt("insert your sum deposit");
+  var month = prompt("insert how many month");
+  var moneyFromDeposit = sumDeposit / 12 * 0.05 * month;
+  alert("your earn money ".concat(moneyFromDeposit));
+  alert("we are finish - good job");
+};
 },{}],"C:/Users/Yarko/AppData/Local/Yarn/Data/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -221,7 +223,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60078" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50530" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -397,5 +399,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["C:/Users/Yarko/AppData/Local/Yarn/Data/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","index.js"], null)
-//# sourceMappingURL=/JS-module.e31bb0bc.js.map
+},{}]},{},["C:/Users/Yarko/AppData/Local/Yarn/Data/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/index.js"], null)
+//# sourceMappingURL=/js.00a46daa.js.map

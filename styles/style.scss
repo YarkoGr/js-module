@@ -1,3 +1,45 @@
-h1 {
-    color: red;
+@import "./_mixins";
+@import "./common";
+.start-page {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    min-height: 100vh;
+    background: url(../img/bg.jpg) no-repeat center;
+    background-size: cover;
+    text-align: center;
+    &__title {
+        @include text(36px, 700);
+        background-color: teal;
+    }
+    &__list {
+        min-height: 80vh;
+        list-style: none;
+        @include flex(space-around, center, row, wrap);
+    }
+    &__list-item {
+        @include flex(center, center, column);
+        background-color: teal;
+        border: 2px solid teal;
+        transition: background-color 0.3s ease-in;
+        &:hover {
+            background-color: #fff;
+            color: teal;
+        }
+    }
+    &__list-item:last-child {
+        margin-right: 0;
+    }
+    &__list-item-text {
+        display: block;
+        @include text(20px);
+    }
+    &__list-item-btn {
+        padding: 20px 35px;
+        text-decoration: none;
+        @include text(26px, 700);
+        transition: color 0.5s ease;
+        &:hover {
+            color: teal;
+        }
+    }
 }
