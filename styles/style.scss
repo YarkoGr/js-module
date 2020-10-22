@@ -1,5 +1,6 @@
 @import "./_mixins";
 @import "./common";
+@import url('https://fonts.googleapis.com/css2?family=Turret+Road:wght@200;400;700&display=swap');
 .start-page {
     padding-top: 50px;
     padding-bottom: 50px;
@@ -8,16 +9,22 @@
     background-size: cover;
     text-align: center;
     &__title {
-        @include text(36px, 700);
+        @include text(36px,
+        700);
         background-color: teal;
     }
     &__list {
         min-height: 80vh;
         list-style: none;
-        @include flex(space-around, center, row, wrap);
+        @include flex(space-around,
+        center,
+        row,
+        wrap);
     }
     &__list-item {
-        @include flex(center, center, column);
+        @include flex(center,
+        center,
+        column);
         background-color: teal;
         border: 2px solid teal;
         transition: background-color 0.3s ease-in;
@@ -36,7 +43,9 @@
     &__list-item-btn {
         padding: 20px 35px;
         text-decoration: none;
-        @include text(26px, 700);
+        line-height: 33.5px;
+        @include text(26px,
+        700);
         transition: color 0.5s ease;
         &:hover {
             color: teal;
