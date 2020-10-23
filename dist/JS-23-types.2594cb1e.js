@@ -259,7 +259,8 @@ document.getElementById("btn2").onclick = function btnTwo() {
     default:
       alert("Try again please");
       break;
-  } //Запросить у пользователя сумму покупки и вывести сумму к оплате со скидкой:
+  } //
+  //Запросить у пользователя сумму покупки и вывести сумму к оплате со скидкой:
   //от 200 до 300 – скидка будет 3%, от 300 до 500 – 5%, от 500 и выше – 7%.
 
 
@@ -284,7 +285,42 @@ document.getElementById("btn2").onclick = function btnTwo() {
   }
 
   var yourTotalSum = purchaseAmount - purchaseAmount / 100 * discont;
-  alert("Your total sum ".concat(yourTotalSum));
+  alert("Your total sum ".concat(yourTotalSum)); //
+  //Запросить у пользователя длину окружности и периметр квадрата.
+  // Определить, может ли такая окружность поместиться в указанный квадрат.
+
+  var lenghtOfCircle = +prompt("Enter lenght of circle please");
+  var perimetrOfSquare = +prompt("Enter perimetr of square please");
+  var diametrOfCircle = lenghtOfCircle / 3.14;
+  var compareSize = perimetrOfSquare > diametrOfCircle ? "can insert circle in square" : "can not insert circle in square";
+  alert(compareSize); //
+  //Задать пользователю 3 вопроса, в каждом вопросе по 3 варианта ответа. За каждый правильный ответ начисляется 2 балла.
+  //После вопросов выведите пользователю количество набранных баллов.
+
+  var z = 0;
+
+  for (var i = 0; i < 3; i++) {
+    alert("how much ".concat(i, " + ").concat(i, " ?, true = 2 points"));
+    var x = i + i;
+    confirm("".concat(i, " + ").concat(i, " = ").concat(x + 1));
+    confirm("".concat(i, " + ").concat(i, " = ").concat(x + 2));
+    var rightAnswer = confirm("".concat(i, " + ").concat(i, " = ").concat(x));
+
+    if (rightAnswer == true) {
+      rightAnswer = 2;
+      z = z + rightAnswer;
+    }
+
+    console.log("".concat(rightAnswer, " and ").concat(z));
+  }
+
+  alert("you have ".concat(z, " points")); //
+  //Запросить дату (день, месяц, год) и вывести следующую за ней дату.
+  // Учтите возможность перехода на следующий месяц, год, а также високосный год.
+
+  var date = new Date(prompt("Enter date in format like as mm.dd.year"));
+  date.setDate(date.getDate() + 1);
+  alert("tomorrow it will be ".concat(date));
 };
 },{}],"C:/Users/Yarko/AppData/Local/Yarn/Data/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -314,7 +350,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52102" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60348" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

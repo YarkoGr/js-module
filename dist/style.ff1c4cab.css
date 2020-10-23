@@ -37,7 +37,7 @@ a {
   background-color: teal;
 }
 .start-page__list {
-  min-height: 80vh;
+  min-height: 78vh;
   list-style: none;
   display: flex;
   flex-direction: row;

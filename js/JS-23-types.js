@@ -125,7 +125,7 @@ document.getElementById("btn2").onclick = function btnTwo() {
             alert("Try again please");
             break;
     }
-
+    //
     //Запросить у пользователя сумму покупки и вывести сумму к оплате со скидкой:
     //от 200 до 300 – скидка будет 3%, от 300 до 500 – 5%, от 500 и выше – 7%.
     let purchaseAmount = +prompt(
@@ -147,4 +147,40 @@ document.getElementById("btn2").onclick = function btnTwo() {
     }
     let yourTotalSum = purchaseAmount - (purchaseAmount / 100) * discont;
     alert(`Your total sum ${yourTotalSum}`);
+    //
+    //Запросить у пользователя длину окружности и периметр квадрата.
+    // Определить, может ли такая окружность поместиться в указанный квадрат.
+    let lenghtOfCircle = +prompt("Enter lenght of circle please");
+    let perimetrOfSquare = +prompt("Enter perimetr of square please");
+    let diametrOfCircle = lenghtOfCircle / 3.14;
+    let compareSize =
+        perimetrOfSquare > diametrOfCircle ?
+        "can insert circle in square" :
+        "can not insert circle in square";
+    alert(compareSize);
+    //
+    //Задать пользователю 3 вопроса, в каждом вопросе по 3 варианта ответа. За каждый правильный ответ начисляется 2 балла.
+    //После вопросов выведите пользователю количество набранных баллов.
+    let z = 0;
+    for (let i = 0; i < 3; i++) {
+        alert(`how much ${i} + ${i} ?, true = 2 points`);
+        let x = i + i;
+        confirm(`${i} + ${i} = ${x + 1}`);
+        confirm(`${i} + ${i} = ${x + 2}`);
+        let rightAnswer = confirm(`${i} + ${i} = ${x}`);
+        if (rightAnswer == true) {
+            rightAnswer = 2;
+            z = z + rightAnswer;
+        }
+        console.log(`${rightAnswer} and ${z}`);
+    }
+    alert(`you have ${z} points`);
+    //
+    //Запросить дату (день, месяц, год) и вывести следующую за ней дату.
+    // Учтите возможность перехода на следующий месяц, год, а также високосный год.
+
+    let date = new Date(prompt("Enter date in format like as mm.dd.year"));
+    date.setDate(date.getDate() + 1);
+
+    alert(`tomorrow it will be ${date}`);
 };
