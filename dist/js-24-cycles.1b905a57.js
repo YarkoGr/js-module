@@ -117,118 +117,86 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"js/index.js":[function(require,module,exports) {
-document.getElementById("btn22-1").onclick = function () {
-  //1.вітання з юзером ))
-  var name = prompt("Enter your name please");
-  alert("Hello ".concat(name));
-}; //
+})({"js/js-24-cycles.js":[function(require,module,exports) {
+document.getElementById("btn3").onclick = function () {
+  //Подсчитать сумму всех чисел в заданном пользователем диапазоне.
+  var t = 1;
+
+  function task() {
+    alert("task-".concat(t));
+    t += 1;
+  } // //
+  // task();
+  // //1.Подсчитать сумму всех чисел в заданном пользователем диапазоне.
+  // let sumForAlert = 0;
+  // while (true) {
+  //     let sumOfNumbers = +prompt(`Enter numbers for sum`);
+  //     if (!sumOfNumbers) break;
+  //     sumForAlert += sumOfNumbers;
+  // }
+  // alert(`your sum ${sumForAlert}`);
+  // //
+  // task();
+  // //2.Запросить 2 числа и найти только наибольший общий делитель.
+  // let firstNumber = +prompt(`Enter first number, please`);
+  // let secondNumber = +prompt(`Enter second number, please`);
+  // let divider = 0;
+  // while (firstNumber !== 0) {
+  //     divider = secondNumber % firstNumber;
+  //     secondNumber = firstNumber;
+  //     firstNumber = divider;
+  // }
+  // alert(secondNumber);
+  // //
+  // task();
+  // //3.Запросить у пользователя число и вывести все делители этого числа.
+  // let numberForDivid = +prompt(
+  //     `Enter some nuber, and i show you all divided numbers`
+  // );
+  // let forCicle = numberForDivid;
+  // for (let i = 1; i < forCicle; i++) {
+  //     let x = forCicle % i;
+  //     if (x == 0) {
+  //         alert(i);
+  //     }
+  // }
+  // //
+  // task();
+  // //4.Определить количество цифр в введенном числе.
+  // let lenghtOfNumber = prompt(`calculate lenght of nuber please`);
+  // alert(lenghtOfNumber.length);
+  // //
+  // task();
+  // //5.Запросить у пользователя 10 чисел и подсчитать, сколько он ввел положительных, отрицательных и нулей.
+  // // При этом также посчитать, сколько четных и нечетных. Вывести статистику на экран. Учтите, что достаточно одной переменной (не 10) для ввода чисел пользователем.
+  // let zero = 0;
+  // let minus = 0;
+  // let plus = 0;
+  // let even = 0;
+  // let odd = 0;
+  // for (let i = 1; i <= 10; i++) {
+  //     let number = +prompt(`insert ten numbers, please, that is number ${i}`);
+  //     if (number == 0) {
+  //         zero += 1;
+  //     } else if (number < 0) {
+  //         minus += 1;
+  //     } else {
+  //         plus += 1;
+  //     }
+  //     if (number % 2 == 0) {
+  //         even += 1;
+  //     } else {
+  //         odd += 1;
+  //     }
+  // }
+  // alert(
+  //     `you insert null = ${zero}; minuses = ${minus}; pluses = ${plus}; evens = ${even}; odds = ${odd}`
+  // );
+  // alert(`you break`);
+  //
 
 
-document.getElementById("btn22-2").onclick = function () {
-  //2.скільки тобі років
-  var year = prompt("Please, enter your year of birthday");
-  var howOld = 2020 - year;
-  alert("You have ".concat(howOld));
-  console.log(howOld);
-}; //
-
-
-document.getElementById("btn22-3").onclick = function () {
-  //3.периметр квадрата
-  var londSideCube = prompt("input length side of square");
-  var perimetr = londSideCube * 4;
-  alert("perimetr = ".concat(perimetr));
-}; //
-
-
-document.getElementById("btn22-4").onclick = function () {
-  //4.площа кола
-  var longCircle = prompt("input length of circle");
-  var areaOfCircle = 3.14 * Math.pow(longCircle, 2);
-  alert("area = ".concat(areaOfCircle));
-}; //
-
-
-document.getElementById("btn22-5").onclick = function () {
-  //5.дистанція+час=швидкість руху
-  var distance = prompt("What distance do you need(km)");
-  var time = prompt("How many time do you have(hour)");
-  var countKmPerHour = distance / time;
-  alert("You must move ".concat(countKmPerHour, " km/hour"));
-}; //
-
-
-document.getElementById("btn22-6").onclick = function () {
-  //6.конверт долар => євро
-  var dollars = prompt("How many dollars do you whant convert to euro");
-  var crosscurs = 1.32;
-  var euro = dollars * crosscurs;
-  alert("you would be have ".concat(euro, " euro"));
-}; //
-
-
-document.getElementById("btn22-7").onclick = function () {
-  //7.прорахунок кількості файлів для флешок
-  var memoryFlashCard = prompt("How many GB has your flash card");
-  var fileSize = 820;
-  var countFiles = memoryFlashCard * 1000 / fileSize;
-  alert("You can record ".concat(parseInt(countFiles), " files with size 820mb"));
-}; //
-
-
-document.getElementById("btn22-8").onclick = function () {
-  //8.кількість шоколаду на певну суму зі здачею
-  var money = prompt("How many money dou have");
-  var cost = prompt("What is the price of chokolate");
-  var amount = money / cost;
-  var change = money % cost;
-
-  if (amount > 1) {
-    alert("You can by ".concat(parseInt(amount), " chokolates and have ").concat(change, " change"));
-  } else {
-    alert("You can't by");
-  }
-}; //
-
-
-document.getElementById("btn22-9").onclick = function () {
-  //9.дзеркальне відображення числа
-  var numberForRevers = prompt("Enter number for revers");
-  var x = numberForRevers;
-  var revers = 0;
-
-  while (x > 0) {
-    var y = x % 10;
-    revers = revers * 10 + y;
-    x = parseInt(x / 10);
-  }
-
-  alert("Yor revers number ".concat(revers));
-}; // //алгоритм-початок циклу while (x > 0)
-// x = 123 //допустим ввели 123
-// y = 0
-// y = 123 % 10 = 3             //перша ітерація
-// revers=((0 * 10) +3) = 3
-// x = parseInt (123 / 10) = 12
-// x = 12
-// y = 12 % 10 = 2               //друга ітерація
-// revers=((3 * 10) +2) = 32
-// x = parseInt (12 / 10) = 1
-// x = 1
-// y = 1 % 10 = 1               //третя ітерація
-// revers=((32 * 10) +1) = 321
-// x = parseInt (1 / 10) = 0 //кінець циклу while (x > 0)
-//
-
-
-document.getElementById("btn22-10").onclick = function () {
-  //10.розрахунок депозиту
-  var sumDeposit = prompt("insert your sum deposit");
-  var month = prompt("insert how many month");
-  var moneyFromDeposit = sumDeposit / 12 * 0.05 * month;
-  alert("your earn money ".concat(moneyFromDeposit));
-  alert("we are finish - good job");
+  task(); //6.
 };
 },{}],"C:/Users/Yarko/AppData/Local/Yarn/Data/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -434,5 +402,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["C:/Users/Yarko/AppData/Local/Yarn/Data/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/index.js"], null)
-//# sourceMappingURL=/js.00a46daa.js.map
+},{}]},{},["C:/Users/Yarko/AppData/Local/Yarn/Data/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/js-24-cycles.js"], null)
+//# sourceMappingURL=/js-24-cycles.1b905a57.js.map

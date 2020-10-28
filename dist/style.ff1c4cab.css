@@ -29,6 +29,7 @@ a {
   background: url(/bg.c04a5f46.jpg) no-repeat center;
   background-size: cover;
   text-align: center;
+  display: flex;
 }
 .start-page__title {
   font-size: 36px;
@@ -37,8 +38,8 @@ a {
   background-color: teal;
 }
 .start-page__list {
-  min-height: 78vh;
   list-style: none;
+  height: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-around;

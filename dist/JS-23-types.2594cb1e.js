@@ -118,8 +118,8 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"js/JS-23-types.js":[function(require,module,exports) {
-document.getElementById("btn2").onclick = function btnTwo() {
-  //Запросить у пользователя его возраст и определить,
+document.getElementById("btn23-1").onclick = function () {
+  //1.Запросить у пользователя его возраст и определить,
   // кем он является: ребенком (0–2), подростком (12–18),
   //взрослым (18_60) или пенсионером (60– ...)
   var age = +prompt("Enter your age pls");
@@ -135,11 +135,13 @@ document.getElementById("btn2").onclick = function btnTwo() {
     alert("you are pensioner");
   } else {
     alert("try again");
-  } //
-  //Запросить у пользователя число от 0 до 9 и вывести ему спецсимвол,
+  }
+}; //
+
+
+document.getElementById("btn23-2").onclick = function () {
+  //2.Запросить у пользователя число от 0 до 9 и вывести ему спецсимвол,
   // который расположен на этой клавише (1–!, 2–@, 3–# и т. д).
-
-
   var inputKey = Number(prompt("Enter number from 0 to 9, than return symbol for this number"));
 
   switch (true) {
@@ -186,10 +188,12 @@ document.getElementById("btn2").onclick = function btnTwo() {
     default:
       alert("try again");
       break;
-  } //
-  //Запросить у пользователя трехзначное число и проверить, есть ли в нем одинаковые цифры.
+  }
+}; //
 
 
+document.getElementById("btn23-3").onclick = function () {
+  //3.Запросить у пользователя трехзначное число и проверить, есть ли в нем одинаковые цифры.
   var threeDigitNumber = +prompt("enter three-digit number please, for checked identical numbers in it");
   var check1 = parseInt(threeDigitNumber / 100);
   console.log(check1);
@@ -202,21 +206,25 @@ document.getElementById("btn2").onclick = function btnTwo() {
     alert("no same digits");
   } else {
     alert("find same digits");
-  } //
-  //Запросить у пользователя год и проверить, високосный он или нет.
+  }
+}; //
+
+
+document.getElementById("btn23-4").onclick = function () {
+  //4.Запросить у пользователя год и проверить, високосный он или нет.
   // Високосный год либо кратен 400, либо кратен 4 и при этом не кратен 100.
-
-
   var isLeapYear = +prompt("for check a leap year enter 'YYYY' please");
 
   if (isLeapYear % 400 === 0 || isLeapYear % 4 === 0 && isLeapYear % 100 != 0) {
     alert("yes");
   } else {
     alert("not");
-  } //
-  //Запросить у пользователя пятиразрядное число и определить, является ли оно палиндромом.
+  }
+}; //
 
 
+document.getElementById("btn23-5").onclick = function () {
+  //5.Запросить у пользователя пятиразрядное число и определить, является ли оно палиндромом.
   var isPalindrom = +prompt("check number for is it palindrom");
   var forCheckPalindrom = isPalindrom;
   var transformNumber = 0;
@@ -230,10 +238,13 @@ document.getElementById("btn2").onclick = function btnTwo() {
   console.log(transformNumber);
   console.log(isPalindrom);
   var palindromResult = isPalindrom === transformNumber ? "it is" : "it is not";
-  alert(palindromResult); //
-  //Написать конвертор валют. Пользователь вводит количество USD, выбирает,
-  //в какую валюту хочет перевести EUR, UAN или AZN, и получает в ответ соответствующую сумму.
+  alert(palindromResult);
+}; //
 
+
+document.getElementById("btn23-6").onclick = function () {
+  //6.Написать конвертор валют. Пользователь вводит количество USD, выбирает,
+  //в какую валюту хочет перевести EUR, UAN или AZN, и получает в ответ соответствующую сумму.
   var inputUsd = +prompt("Eter how much dollars you want to convert");
   var inputCurrency = prompt("Enter for choise (EUR UAH AZN or eur uah azn) please");
   var usdToEur = 0.7;
@@ -259,11 +270,13 @@ document.getElementById("btn2").onclick = function btnTwo() {
     default:
       alert("Try again please");
       break;
-  } //
-  //Запросить у пользователя сумму покупки и вывести сумму к оплате со скидкой:
+  }
+}; //
+
+
+document.getElementById("btn23-7").onclick = function () {
+  //7.Запросить у пользователя сумму покупки и вывести сумму к оплате со скидкой:
   //от 200 до 300 – скидка будет 3%, от 300 до 500 – 5%, от 500 и выше – 7%.
-
-
   var purchaseAmount = +prompt("your discont 200-300=3%; 300-500=5%; >500=7%; Enter your summ please");
   var discont;
 
@@ -285,18 +298,24 @@ document.getElementById("btn2").onclick = function btnTwo() {
   }
 
   var yourTotalSum = purchaseAmount - purchaseAmount / 100 * discont;
-  alert("Your total sum ".concat(yourTotalSum)); //
-  //Запросить у пользователя длину окружности и периметр квадрата.
-  // Определить, может ли такая окружность поместиться в указанный квадрат.
+  alert("Your total sum ".concat(yourTotalSum));
+}; //
 
+
+document.getElementById("btn23-8").onclick = function () {
+  //8.Запросить у пользователя длину окружности и периметр квадрата.
+  //Определить, может ли такая окружность поместиться в указанный квадрат.
   var lenghtOfCircle = +prompt("Enter lenght of circle please");
   var perimetrOfSquare = +prompt("Enter perimetr of square please");
   var diametrOfCircle = lenghtOfCircle / 3.14;
   var compareSize = perimetrOfSquare > diametrOfCircle ? "can insert circle in square" : "can not insert circle in square";
-  alert(compareSize); //
-  //Задать пользователю 3 вопроса, в каждом вопросе по 3 варианта ответа. За каждый правильный ответ начисляется 2 балла.
-  //После вопросов выведите пользователю количество набранных баллов.
+  alert(compareSize);
+}; //
 
+
+document.getElementById("btn23-9").onclick = function () {
+  //9.Задать пользователю 3 вопроса, в каждом вопросе по 3 варианта ответа. За каждый правильный ответ начисляется 2 балла.
+  //После вопросов выведите пользователю количество набранных баллов.
   var z = 0;
 
   for (var i = 0; i < 3; i++) {
@@ -314,10 +333,13 @@ document.getElementById("btn2").onclick = function btnTwo() {
     console.log("".concat(rightAnswer, " and ").concat(z));
   }
 
-  alert("you have ".concat(z, " points")); //
-  //Запросить дату (день, месяц, год) и вывести следующую за ней дату.
-  // Учтите возможность перехода на следующий месяц, год, а также високосный год.
+  alert("you have ".concat(z, " points"));
+}; //
 
+
+document.getElementById("btn23-10").onclick = function () {
+  //10.Запросить дату (день, месяц, год) и вывести следующую за ней дату.
+  // Учтите возможность перехода на следующий месяц, год, а также високосный год.
   var date = new Date(prompt("Enter date in format like as mm.dd.year"));
   date.setDate(date.getDate() + 1);
   alert("tomorrow it will be ".concat(date));
@@ -350,7 +372,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60348" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60685" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

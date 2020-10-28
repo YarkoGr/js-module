@@ -8,14 +8,16 @@
     background: url(../img/bg.jpg) no-repeat center;
     background-size: cover;
     text-align: center;
+    display: flex;
     &__title {
         @include text(36px,
         700);
         background-color: teal;
     }
     &__list {
-        min-height: 78vh;
+        // min-height: 78vh;
         list-style: none;
+        height: 100%;
         @include flex(space-around,
         center,
         row,

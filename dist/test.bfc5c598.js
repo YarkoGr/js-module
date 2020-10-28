@@ -117,119 +117,40 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"js/index.js":[function(require,module,exports) {
-document.getElementById("btn22-1").onclick = function () {
-  //1.вітання з юзером ))
-  var name = prompt("Enter your name please");
-  alert("Hello ".concat(name));
-}; //
-
-
-document.getElementById("btn22-2").onclick = function () {
-  //2.скільки тобі років
-  var year = prompt("Please, enter your year of birthday");
-  var howOld = 2020 - year;
-  alert("You have ".concat(howOld));
-  console.log(howOld);
-}; //
-
-
-document.getElementById("btn22-3").onclick = function () {
-  //3.периметр квадрата
-  var londSideCube = prompt("input length side of square");
-  var perimetr = londSideCube * 4;
-  alert("perimetr = ".concat(perimetr));
-}; //
-
-
-document.getElementById("btn22-4").onclick = function () {
-  //4.площа кола
-  var longCircle = prompt("input length of circle");
-  var areaOfCircle = 3.14 * Math.pow(longCircle, 2);
-  alert("area = ".concat(areaOfCircle));
-}; //
-
-
-document.getElementById("btn22-5").onclick = function () {
-  //5.дистанція+час=швидкість руху
-  var distance = prompt("What distance do you need(km)");
-  var time = prompt("How many time do you have(hour)");
-  var countKmPerHour = distance / time;
-  alert("You must move ".concat(countKmPerHour, " km/hour"));
-}; //
-
-
-document.getElementById("btn22-6").onclick = function () {
-  //6.конверт долар => євро
-  var dollars = prompt("How many dollars do you whant convert to euro");
-  var crosscurs = 1.32;
-  var euro = dollars * crosscurs;
-  alert("you would be have ".concat(euro, " euro"));
-}; //
-
-
-document.getElementById("btn22-7").onclick = function () {
-  //7.прорахунок кількості файлів для флешок
-  var memoryFlashCard = prompt("How many GB has your flash card");
-  var fileSize = 820;
-  var countFiles = memoryFlashCard * 1000 / fileSize;
-  alert("You can record ".concat(parseInt(countFiles), " files with size 820mb"));
-}; //
-
-
-document.getElementById("btn22-8").onclick = function () {
-  //8.кількість шоколаду на певну суму зі здачею
-  var money = prompt("How many money dou have");
-  var cost = prompt("What is the price of chokolate");
-  var amount = money / cost;
-  var change = money % cost;
-
-  if (amount > 1) {
-    alert("You can by ".concat(parseInt(amount), " chokolates and have ").concat(change, " change"));
-  } else {
-    alert("You can't by");
-  }
-}; //
-
-
-document.getElementById("btn22-9").onclick = function () {
-  //9.дзеркальне відображення числа
-  var numberForRevers = prompt("Enter number for revers");
-  var x = numberForRevers;
-  var revers = 0;
-
-  while (x > 0) {
-    var y = x % 10;
-    revers = revers * 10 + y;
-    x = parseInt(x / 10);
-  }
-
-  alert("Yor revers number ".concat(revers));
-}; // //алгоритм-початок циклу while (x > 0)
-// x = 123 //допустим ввели 123
-// y = 0
-// y = 123 % 10 = 3             //перша ітерація
-// revers=((0 * 10) +3) = 3
-// x = parseInt (123 / 10) = 12
-// x = 12
-// y = 12 % 10 = 2               //друга ітерація
-// revers=((3 * 10) +2) = 32
-// x = parseInt (12 / 10) = 1
-// x = 1
-// y = 1 % 10 = 1               //третя ітерація
-// revers=((32 * 10) +1) = 321
-// x = parseInt (1 / 10) = 0 //кінець циклу while (x > 0)
+})({"js/test.js":[function(require,module,exports) {
+// let sum = 0;
+// while (true) {
+//     let value = +prompt("Введите число", "");
+//     if (!value) break; // (*)
+//     sum += value;
+// }
+// alert("Сумма: " + sum);
 //
-
-
-document.getElementById("btn22-10").onclick = function () {
-  //10.розрахунок депозиту
-  var sumDeposit = prompt("insert your sum deposit");
-  var month = prompt("insert how many month");
-  var moneyFromDeposit = sumDeposit / 12 * 0.05 * month;
-  alert("your earn money ".concat(moneyFromDeposit));
-  alert("we are finish - good job");
-};
+// for (let i = 0; i < 10; i++) {
+//     // если true, пропустить оставшуюся часть тела цикла
+//     if (i % 2 == 0) continue;
+//     alert(i); // 1, затем 3, 5, 7, 9
+// }
+//
+// outer: for (let i = 0; i < 3; i++) {
+//     for (let j = 0; j < 3; j++) {
+//         let input = prompt(`Значение на координатах (${i},${j})`, "");
+//         // если пустая строка или Отмена, то выйти из обоих циклов
+//         if (!input) break outer; // (*)
+//         // сделать что-нибудь со значениями...
+//     }
+// }
+//     alert("Готово!");
+//
+// let n = +prompt(`enter number`);
+// nextPrime: for (let i = 2; i <= n; i++) {
+//     // Для всех i...
+//     for (let j = 2; j < i; j++) {
+//         // проверить, делится ли число..
+//         if (i % j == 0) continue nextPrime; // не подходит, берём следующее
+//     }
+//     alert(i); // простое число
+// }
 },{}],"C:/Users/Yarko/AppData/Local/Yarn/Data/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -434,5 +355,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["C:/Users/Yarko/AppData/Local/Yarn/Data/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/index.js"], null)
-//# sourceMappingURL=/js.00a46daa.js.map
+},{}]},{},["C:/Users/Yarko/AppData/Local/Yarn/Data/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/test.js"], null)
+//# sourceMappingURL=/test.bfc5c598.js.map
