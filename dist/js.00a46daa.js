@@ -118,15 +118,17 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"js/index.js":[function(require,module,exports) {
-document.getElementById("btn22-1").onclick = function () {
-  //1.вітання з юзером ))
+document.getElementById("btn22-1").onclick = function (event) {
+  event.preventDefault(); //1.вітання з юзером ))
+
   var name = prompt("Enter your name please");
   alert("Hello ".concat(name));
 }; //
 
 
-document.getElementById("btn22-2").onclick = function () {
-  //2.скільки тобі років
+document.getElementById("btn22-2").onclick = function (event) {
+  event.preventDefault(); //2.скільки тобі років
+
   var year = prompt("Please, enter your year of birthday");
   var howOld = 2020 - year;
   alert("You have ".concat(howOld));
@@ -134,24 +136,27 @@ document.getElementById("btn22-2").onclick = function () {
 }; //
 
 
-document.getElementById("btn22-3").onclick = function () {
-  //3.периметр квадрата
+document.getElementById("btn22-3").onclick = function (event) {
+  event.preventDefault(); //3.периметр квадрата
+
   var londSideCube = prompt("input length side of square");
   var perimetr = londSideCube * 4;
   alert("perimetr = ".concat(perimetr));
 }; //
 
 
-document.getElementById("btn22-4").onclick = function () {
-  //4.площа кола
+document.getElementById("btn22-4").onclick = function (event) {
+  event.preventDefault(); //4.площа кола
+
   var longCircle = prompt("input length of circle");
   var areaOfCircle = 3.14 * Math.pow(longCircle, 2);
   alert("area = ".concat(areaOfCircle));
 }; //
 
 
-document.getElementById("btn22-5").onclick = function () {
-  //5.дистанція+час=швидкість руху
+document.getElementById("btn22-5").onclick = function (event) {
+  event.preventDefault(); //5.дистанція+час=швидкість руху
+
   var distance = prompt("What distance do you need(km)");
   var time = prompt("How many time do you have(hour)");
   var countKmPerHour = distance / time;
@@ -159,8 +164,9 @@ document.getElementById("btn22-5").onclick = function () {
 }; //
 
 
-document.getElementById("btn22-6").onclick = function () {
-  //6.конверт долар => євро
+document.getElementById("btn22-6").onclick = function (event) {
+  event.preventDefault(); //6.конверт долар => євро
+
   var dollars = prompt("How many dollars do you whant convert to euro");
   var crosscurs = 1.32;
   var euro = dollars * crosscurs;
@@ -168,8 +174,9 @@ document.getElementById("btn22-6").onclick = function () {
 }; //
 
 
-document.getElementById("btn22-7").onclick = function () {
-  //7.прорахунок кількості файлів для флешок
+document.getElementById("btn22-7").onclick = function (event) {
+  event.preventDefault(); //7.прорахунок кількості файлів для флешок
+
   var memoryFlashCard = prompt("How many GB has your flash card");
   var fileSize = 820;
   var countFiles = memoryFlashCard * 1000 / fileSize;
@@ -177,8 +184,9 @@ document.getElementById("btn22-7").onclick = function () {
 }; //
 
 
-document.getElementById("btn22-8").onclick = function () {
-  //8.кількість шоколаду на певну суму зі здачею
+document.getElementById("btn22-8").onclick = function (event) {
+  event.preventDefault(); //8.кількість шоколаду на певну суму зі здачею
+
   var money = prompt("How many money dou have");
   var cost = prompt("What is the price of chokolate");
   var amount = money / cost;
@@ -192,19 +200,20 @@ document.getElementById("btn22-8").onclick = function () {
 }; //
 
 
-document.getElementById("btn22-9").onclick = function () {
-  //9.дзеркальне відображення числа
+document.getElementById("btn22-9").onclick = function (event) {
+  event.preventDefault(); //9.дзеркальне відображення числа
+
   var numberForRevers = prompt("Enter number for revers");
   var x = numberForRevers;
-  var revers = 0;
+  var rev = 0;
 
   while (x > 0) {
     var y = x % 10;
-    revers = revers * 10 + y;
+    rev = rev * 10 + y;
     x = parseInt(x / 10);
   }
 
-  alert("Yor revers number ".concat(revers));
+  alert("Yor revers number ".concat(rev));
 }; // //алгоритм-початок циклу while (x > 0)
 // x = 123 //допустим ввели 123
 // y = 0
@@ -222,8 +231,9 @@ document.getElementById("btn22-9").onclick = function () {
 //
 
 
-document.getElementById("btn22-10").onclick = function () {
-  //10.розрахунок депозиту
+document.getElementById("btn22-10").onclick = function (event) {
+  event.preventDefault(); //10.розрахунок депозиту
+
   var sumDeposit = prompt("insert your sum deposit");
   var month = prompt("insert how many month");
   var moneyFromDeposit = sumDeposit / 12 * 0.05 * month;
@@ -258,7 +268,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60685" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64814" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

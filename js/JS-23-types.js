@@ -1,8 +1,9 @@
-document.getElementById("btn23-1").onclick = () => {
+document.getElementById("btn23-1").onclick = (event) => {
+    event.preventDefault();
     //1.Запросить у пользователя его возраст и определить,
     // кем он является: ребенком (0–2), подростком (12–18),
     //взрослым (18_60) или пенсионером (60– ...)
-    let age = +prompt("Enter your age pls");
+    const age = +prompt("Enter your age pls");
     if (age != 0 && age <= 12 && age != null) {
         alert(`you are child`);
     } else if (age > 12 && age < 18) {
@@ -17,10 +18,11 @@ document.getElementById("btn23-1").onclick = () => {
     }
 };
 //
-document.getElementById("btn23-2").onclick = () => {
+document.getElementById("btn23-2").onclick = (event) => {
+    event.preventDefault();
     //2.Запросить у пользователя число от 0 до 9 и вывести ему спецсимвол,
     // который расположен на этой клавише (1–!, 2–@, 3–# и т. д).
-    let inputKey = Number(
+    const inputKey = Number(
         prompt(`Enter number from 0 to 9, than return symbol for this number`)
     );
 
@@ -61,16 +63,17 @@ document.getElementById("btn23-2").onclick = () => {
     }
 };
 //
-document.getElementById("btn23-3").onclick = () => {
+document.getElementById("btn23-3").onclick = (event) => {
+    event.preventDefault();
     //3.Запросить у пользователя трехзначное число и проверить, есть ли в нем одинаковые цифры.
-    let threeDigitNumber = +prompt(
+    const threeDigitNumber = +prompt(
         `enter three-digit number please, for checked identical numbers in it`
     );
-    let check1 = parseInt(threeDigitNumber / 100);
+    const check1 = parseInt(threeDigitNumber / 100);
     console.log(check1);
-    let check2 = parseInt(threeDigitNumber / 10) % 10;
+    const check2 = parseInt(threeDigitNumber / 10) % 10;
     console.log(check2);
-    let check3 = threeDigitNumber % 10;
+    const check3 = threeDigitNumber % 10;
     console.log(check3);
     if (check1 != check2 && check2 != check3 && check1 != check3) {
         alert(`no same digits`);
@@ -79,10 +82,11 @@ document.getElementById("btn23-3").onclick = () => {
     }
 };
 //
-document.getElementById("btn23-4").onclick = () => {
+document.getElementById("btn23-4").onclick = (event) => {
+    event.preventDefault();
     //4.Запросить у пользователя год и проверить, високосный он или нет.
     // Високосный год либо кратен 400, либо кратен 4 и при этом не кратен 100.
-    let isLeapYear = +prompt("for check a leap year enter 'YYYY' please");
+    const isLeapYear = +prompt("for check a leap year enter 'YYYY' please");
     if (
         isLeapYear % 400 === 0 ||
         (isLeapYear % 4 === 0 && isLeapYear % 100 != 0)
@@ -93,9 +97,10 @@ document.getElementById("btn23-4").onclick = () => {
     }
 };
 //
-document.getElementById("btn23-5").onclick = () => {
+document.getElementById("btn23-5").onclick = (event) => {
+    event.preventDefault();
     //5.Запросить у пользователя пятиразрядное число и определить, является ли оно палиндромом.
-    let isPalindrom = +prompt(`check number for is it palindrom`);
+    const isPalindrom = +prompt(`check number for is it palindrom`);
     let forCheckPalindrom = isPalindrom;
     let transformNumber = 0;
     while (forCheckPalindrom > 0) {
@@ -109,11 +114,12 @@ document.getElementById("btn23-5").onclick = () => {
     alert(palindromResult);
 };
 //
-document.getElementById("btn23-6").onclick = () => {
+document.getElementById("btn23-6").onclick = (event) => {
+    event.preventDefault();
     //6.Написать конвертор валют. Пользователь вводит количество USD, выбирает,
     //в какую валюту хочет перевести EUR, UAN или AZN, и получает в ответ соответствующую сумму.
-    let inputUsd = +prompt("Eter how much dollars you want to convert");
-    let inputCurrency = prompt(
+    const inputUsd = +prompt("Eter how much dollars you want to convert");
+    const inputCurrency = prompt(
         "Enter for choise (EUR UAH AZN or eur uah azn) please"
     );
     const usdToEur = 0.7;
@@ -138,13 +144,14 @@ document.getElementById("btn23-6").onclick = () => {
     }
 };
 //
-document.getElementById("btn23-7").onclick = () => {
+document.getElementById("btn23-7").onclick = (event) => {
+    event.preventDefault();
     //7.Запросить у пользователя сумму покупки и вывести сумму к оплате со скидкой:
     //от 200 до 300 – скидка будет 3%, от 300 до 500 – 5%, от 500 и выше – 7%.
-    let purchaseAmount = +prompt(
+    const purchaseAmount = +prompt(
         "your discont 200-300=3%; 300-500=5%; >500=7%; Enter your summ please"
     );
-    let discont;
+    let discont = 0;
     switch (true) {
         case purchaseAmount >= 200 && purchaseAmount <= 299:
             discont = 3;
@@ -158,24 +165,26 @@ document.getElementById("btn23-7").onclick = () => {
         default:
             break;
     }
-    let yourTotalSum = purchaseAmount - (purchaseAmount / 100) * discont;
+    const yourTotalSum = purchaseAmount - (purchaseAmount / 100) * discont;
     alert(`Your total sum ${yourTotalSum}`);
 };
 //
-document.getElementById("btn23-8").onclick = () => {
+document.getElementById("btn23-8").onclick = (event) => {
+    event.preventDefault();
     //8.Запросить у пользователя длину окружности и периметр квадрата.
     //Определить, может ли такая окружность поместиться в указанный квадрат.
-    let lenghtOfCircle = +prompt("Enter lenght of circle please");
-    let perimetrOfSquare = +prompt("Enter perimetr of square please");
-    let diametrOfCircle = lenghtOfCircle / 3.14;
-    let compareSize =
+    const lenghtOfCircle = +prompt("Enter lenght of circle please");
+    const perimetrOfSquare = +prompt("Enter perimetr of square please");
+    const diametrOfCircle = lenghtOfCircle / 3.14;
+    const compareSize =
         perimetrOfSquare > diametrOfCircle ?
         "can insert circle in square" :
         "can not insert circle in square";
     alert(compareSize);
 };
 //
-document.getElementById("btn23-9").onclick = () => {
+document.getElementById("btn23-9").onclick = (event) => {
+    event.preventDefault();
     //9.Задать пользователю 3 вопроса, в каждом вопросе по 3 варианта ответа. За каждый правильный ответ начисляется 2 балла.
     //После вопросов выведите пользователю количество набранных баллов.
     let z = 0;
@@ -194,11 +203,12 @@ document.getElementById("btn23-9").onclick = () => {
     alert(`you have ${z} points`);
 };
 //
-document.getElementById("btn23-10").onclick = () => {
+document.getElementById("btn23-10").onclick = (event) => {
+    event.preventDefault();
     //10.Запросить дату (день, месяц, год) и вывести следующую за ней дату.
     // Учтите возможность перехода на следующий месяц, год, а также високосный год.
 
-    let date = new Date(prompt("Enter date in format like as mm.dd.year"));
+    const date = new Date(prompt("Enter date in format like as mm.dd.year"));
     date.setDate(date.getDate() + 1);
 
     alert(`tomorrow it will be ${date}`);

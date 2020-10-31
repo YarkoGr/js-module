@@ -1,0 +1,20 @@
+$style: "js-nav";
+.#{$style} {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: teal;
+    &__wrapper {
+        @include flex();
+        list-style: none;
+    }
+    &__item:not(:last-child) {
+        margin-right: 15px;
+    }
+    &__item-link {
+        text-decoration: none;
+        color: black;
+        &:hover {
+            color: white;
+        }
+    }
+}
