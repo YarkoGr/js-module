@@ -13,6 +13,7 @@ $style: "js-nav";
     &__item-link {
         text-decoration: none;
         color: black;
+        transition: color 0.3s ease;
         &:hover {
             color: white;
         }

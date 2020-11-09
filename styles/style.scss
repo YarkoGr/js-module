@@ -14,6 +14,7 @@
         @include text(36px,
         700);
         background-color: teal;
+        box-shadow: 3px 0px 10px 3px rgba(124, 234, 92, 1);
     }
     &__list {
         // min-height: 78vh;
@@ -30,6 +31,7 @@
         column);
         background-color: teal;
         border: 2px solid teal;
+        box-shadow: 3px 0px 15px 3px rgba(124, 234, 92, 1);
         transition: background-color 0.3s ease-in;
         &:hover {
             background-color: #fff;
@@ -50,8 +52,10 @@
         @include text(26px,
         700);
         transition: color 0.5s ease;
+        transition: transform 0.5s ease;
         &:hover {
             color: teal;
+            transform: translateY(20px);
         }
     }
 }

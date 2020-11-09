@@ -8,8 +8,7 @@ document.getElementById("btn24-1").onclick = (event) => {
         sumForAlert += sumOfNumbers;
     }
     alert(`your sum ${sumForAlert}`);
-};
-// //
+}; // //
 document.getElementById("btn24-2").onclick = (event) => {
     event.preventDefault();
     //2.Запросить 2 числа и найти только наибольший общий делитель.

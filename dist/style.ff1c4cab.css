@@ -43,6 +43,7 @@ a {
 .js-nav__item-link {
   text-decoration: none;
   color: black;
+  transition: color 0.3s ease;
 }
 .js-nav__item-link:hover {
   color: white;
@@ -62,6 +63,7 @@ a {
   font-weight: 700;
   color: white;
   background-color: teal;
+  box-shadow: 3px 0px 10px 3px #7cea5c;
 }
 .start-page__list {
   list-style: none;
@@ -80,6 +82,7 @@ a {
   flex-wrap: nowrap;
   background-color: teal;
   border: 2px solid teal;
+  box-shadow: 3px 0px 15px 3px #7cea5c;
   transition: background-color 0.3s ease-in;
 }
 .start-page__list-item:hover {
@@ -103,9 +106,11 @@ a {
   font-weight: 700;
   color: white;
   transition: color 0.5s ease;
+  transition: transform 0.5s ease;
 }
 .start-page__list-item-btn:hover {
   color: teal;
+  transform: translateY(20px);
 }
 
 /*# sourceMappingURL=/style.ff1c4cab.css.map */
