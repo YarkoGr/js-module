@@ -1,0 +1,87 @@
+@import "../mixins";
+//
+$style: "card-body";
+.#{$style} {
+    display: none;
+    padding: 60px 50px;
+    background-color: $card-body-color;
+    mix-blend-mode: screen;
+    &__photo {
+        width: 30%;
+        margin-right: 40px;
+    }
+    &__photo-wrap {
+        @include padding-hack(143.8%, cover);
+        margin-bottom: 25px;
+    }
+    &__photo-rating {
+        list-style: none;
+        @include flex(center);
+    }
+    &__photo-rating-item {
+        margin-right: 5px;
+        fill: $stars-color;
+        &:last-child {
+            margin-right: 0;
+            fill: $white;
+        }
+    }
+    &__descript {
+        @include flex(start, start, column);
+    }
+    &__descript-header {
+        @include flex(space-between, center);
+        margin-bottom: 42px;
+        width: 100%;
+    }
+    &__descript-header-title {
+        @include text($h32);
+        margin-bottom: 10px;
+    }
+    &__descript-header-subtitle {
+        @include text($h14);
+        display: block;
+    }
+    &__descript-header-rating {
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        border: 2px solid $white;
+        @include flex(center, center);
+    }
+    &__descript-header-rating-value {
+        @include text($h20);
+        display: block;
+    }
+    &__descript-text {
+        @include text($h14);
+        max-width: 300px;
+        display: block;
+        margin-bottom: 60px;
+    }
+    &__descript-footer {
+        @include flex(space-between);
+        width: 100%;
+    }
+    &__descript-footer-price {
+        @include flex(start, start, column);
+    }
+    &__descript-footer-price-offerta {
+        @include text($h12, 700, $stars-color);
+    }
+    &__descript-footer-price-value {
+        @include text($h32);
+    }
+    &__descript-footer-btn {
+        padding: 0 36px;
+        background-color: $btn-color;
+        @include text($white);
+        outline-style: none;
+        border: 2px solid $btn-color;
+        transition: background-color 0.3s ease;
+        &:hover {
+            color: $btn-color;
+            background-color: $white;
+        }
+    }
+}

@@ -117,41 +117,20 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"js/test.js":[function(require,module,exports) {
-// let sum = 0;
-// while (true) {
-//     let value = +prompt("Введите число", "");
-//     if (!value) break; // (*)
-//     sum += value;
-// }
-// alert("Сумма: " + sum);
-//
-// for (let i = 0; i < 10; i++) {
-//     // если true, пропустить оставшуюся часть тела цикла
-//     if (i % 2 == 0) continue;
-//     alert(i); // 1, затем 3, 5, 7, 9
-// }
-//
-// outer: for (let i = 0; i < 3; i++) {
-//     for (let j = 0; j < 3; j++) {
-//         let input = prompt(`Значение на координатах (${i},${j})`, "");
-//         // если пустая строка или Отмена, то выйти из обоих циклов
-//         if (!input) break outer; // (*)
-//         // сделать что-нибудь со значениями...
-//     }
-// }
-//     alert("Готово!");
-//
-// let n = +prompt(`enter number`);
-// nextPrime: for (let i = 2; i <= n; i++) {
-//     // Для всех i...
-//     for (let j = 2; j < i; j++) {
-//         // проверить, делится ли число..
-//         if (i % j == 0) continue nextPrime; // не подходит, берём следующее
-//     }
-//     alert(i); // простое число
-// }
-},{}],"C:/Users/Yarko/AppData/Local/Yarn/Data/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+})({"js/tabs/index-tabs.js":[function(require,module,exports) {
+//in focus first tab
+document.getElementById("focus").focus(); //tabs on jQery
+
+$(".card__header-tabs").click(function (event) {
+  event.preventDefault();
+  var id = $(this).attr("data-tab"),
+      content = $('.card-body[data-tab="' + id + '"]');
+  $(".card__header-tabs.active").removeClass("active");
+  $(this).addClass("active");
+  $(".card-body.active").removeClass("active");
+  content.addClass("active");
+});
+},{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -179,7 +158,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50304" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61836" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -355,5 +334,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["C:/Users/Yarko/AppData/Local/Yarn/Data/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/test.js"], null)
-//# sourceMappingURL=/test.bfc5c598.js.map
+},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/tabs/index-tabs.js"], null)
+//# sourceMappingURL=/index-tabs.2261109a.js.map

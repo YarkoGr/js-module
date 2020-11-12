@@ -117,145 +117,79 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"js/js-26-objects.js":[function(require,module,exports) {
-// document.getElementById("btn26-1").onclick = (event) => {
-//     event.preventDefault();};
-document.getElementById("btn26-1").onclick = function (event) {
-  event.preventDefault(); //1.Создать объект, описывающий автомобиль (производитель, модель, год выпуска, средняя скорость),
-  //и следующие функции для работы с этим объектом:
+})({"node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+var bundleURL = null;
 
-  var car = {
-    producer: "Japan",
-    model: "Toyota",
-    year: 2015,
-    speed: 100
-  }; //Функция для вывода на экран информации об автомобиле;
-
-  for (var key in car) {
-    alert(key);
-    alert(car[key]);
-  } //Функция для подсчета необходимого времени для преодоления переданного расстояния со средней скоростью.
-  // Учтите, что через каждые 4 часа дороги водителю необходимо делать перерыв на 1 час.
-
-
-  var timeForDistance = +prompt("Enter your distance 'km' for this car", 550);
-
-  var calcTimeForDistance = function calcTimeForDistance(a) {
-    var needTimeForDistance = a / car.speed;
-    console.log(needTimeForDistance);
-    var timeForPause = Math.floor(needTimeForDistance / 4);
-    console.log(timeForPause);
-    var totalTime = needTimeForDistance + timeForPause;
-    return totalTime;
-  };
-
-  alert(calcTimeForDistance(timeForDistance));
-}; //
-
-
-document.getElementById("btn26-2").onclick = function (event) {
-  event.preventDefault(); //2.Создать объект, хранящий в себе отдельно числитель и знаменатель дроби,
-  // и следующие функции для работы с этим объектом:
-
-  var numerator1 = +prompt("enter numerator please", 8);
-  var denominator1 = +prompt("enter denominator, please", 22);
-  var numerator2 = +prompt("enter numerator please", 12);
-  var denominator2 = +prompt("enter denominator, please", 32);
-  var factions1 = {
-    numerator1: numerator1,
-    denominator1: denominator1
-  };
-  var factions2 = {
-    numerator2: numerator2,
-    denominator2: denominator2
-  };
-
-  function leastDividerOfTwoNumbers(x, y) {
-    if (typeof x !== "number" || typeof y !== "number") return false;
-    return !x || !y ? 0 : Math.abs(x * y / biggestDividerOfTwoNumbers(x, y));
+function getBundleURLCached() {
+  if (!bundleURL) {
+    bundleURL = getBundleURL();
   }
 
-  function biggestDividerOfTwoNumbers(x, y) {
-    x = Math.abs(x);
-    y = Math.abs(y);
+  return bundleURL;
+}
 
-    while (y) {
-      var t = y;
-      y = x % y;
-      x = t;
+function getBundleURL() {
+  // Attempt to find the URL of the current script and use that as the base URL
+  try {
+    throw new Error();
+  } catch (err) {
+    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
+
+    if (matches) {
+      return getBaseURL(matches[0]);
+    }
+  }
+
+  return '/';
+}
+
+function getBaseURL(url) {
+  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)\/[^/]+$/, '$1') + '/';
+}
+
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+},{}],"node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
+var bundle = require('./bundle-url');
+
+function updateLink(link) {
+  var newLink = link.cloneNode();
+
+  newLink.onload = function () {
+    link.remove();
+  };
+
+  newLink.href = link.href.split('?')[0] + '?' + Date.now();
+  link.parentNode.insertBefore(newLink, link.nextSibling);
+}
+
+var cssTimeout = null;
+
+function reloadCSS() {
+  if (cssTimeout) {
+    return;
+  }
+
+  cssTimeout = setTimeout(function () {
+    var links = document.querySelectorAll('link[rel="stylesheet"]');
+
+    for (var i = 0; i < links.length; i++) {
+      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
+        updateLink(links[i]);
+      }
     }
 
-    return x;
-  }
+    cssTimeout = null;
+  }, 50);
+}
 
-  var commonDenom = leastDividerOfTwoNumbers(factions1.denominator1, factions2.denominator2);
+module.exports = reloadCSS;
+},{"./bundle-url":"node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"styles/tabs/style-tabs.scss":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
 
-  function plusFactions() {
-    var resultPlus = commonDenom / factions1.denominator1 * factions1.numerator1 + commonDenom / factions2.denominator2 * factions2.numerator2;
-    return resultPlus;
-  }
-
-  alert("Plus function = ".concat(plusFactions(), ";"));
-
-  function minusFactions() {
-    var resultPlus = commonDenom / factions1.denominator1 * factions1.numerator1 - commonDenom / factions2.denominator2 * factions2.numerator2;
-    return resultPlus;
-  }
-
-  alert("Plus function = ".concat(minusFactions(), ";"));
-
-  function multiplicationFactions() {
-    var result = factions1.numerator1 * factions2.numerator2 / (factions1.denominator1 * factions2.denominator2);
-    return result;
-  }
-
-  alert("Plus function = ".concat(multiplicationFactions(), ";"));
-
-  function divisionFactions() {
-    var result = factions1.numerator1 * factions2.denominator2 / (factions1.denominator1 * factions2.numerator2);
-    return result;
-  }
-
-  alert("Plus function = ".concat(divisionFactions(), ";"));
-}; //
-
-
-document.getElementById("btn26-3").onclick = function (event) {
-  event.preventDefault(); //3.Создать объект, описывающий время (часы, минуты, секунды), и следующие функции для работы с этим объектом:
-
-  var now = new Date();
-  alert(now.toLocaleTimeString());
-  var addSec = +prompt("Time is now ".concat(now.toLocaleTimeString(), " How many seconds add to this time"), 120);
-  var date1 = new Date();
-  var newDateSec = new Date();
-  newDateSec.setSeconds(date1.getSeconds() + addSec);
-  alert(newDateSec.toLocaleTimeString());
-  var addMin = +prompt("Time is now ".concat(now.toLocaleTimeString(), " How many minutes add to this time"), 24);
-  var newDateMin = new Date();
-  newDateMin.setMinutes(date1.getMinutes() + addMin);
-  alert(newDateMin.toLocaleTimeString());
-  var addHours = +prompt("Time is now ".concat(now.toLocaleTimeString(), " How many minutes add to this time"), 4);
-  var newDateHours = new Date();
-  newDateHours.setHours(date1.getHours() + addHours);
-  alert(newDateHours.toLocaleTimeString()); // const nowDate = new Date();
-  // const hours = nowDate.getHours();
-  // const minutes = nowDate.getMinutes();
-  // const seconds = nowDate.getSeconds();
-  // const myDateObj = {
-  //     hours: nowDate.getHours(),
-  //     minutes: nowDate.getMinutes(),
-  //     seconds: nowDate.getSeconds(),
-  // };
-  // alert(`${hours}:${minutes}:${seconds}`);
-  // for (let key in myDateObj) {
-  //     alert(myDateObj[key]);
-  //     alert(key);
-  // }
-  // for (let key in myDateObj) {
-  //     alert(`${myDateObj.hours}:${myDateObj.minutes}:${myDateObj.seconds}`);
-  // }
-};
-},{}],"C:/Users/Yarko/AppData/Local/Yarn/Data/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"./..\\..\\img\\tabs-img\\bg-img.png":[["bg-img.5493e303.png","img/tabs-img/bg-img.png"],"img/tabs-img/bg-img.png"],"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -283,7 +217,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50304" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61836" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -459,5 +393,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["C:/Users/Yarko/AppData/Local/Yarn/Data/global/node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/js-26-objects.js"], null)
-//# sourceMappingURL=/js-26-objects.fe0e5774.js.map
+},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js"], null)
+//# sourceMappingURL=/style-tabs.dc40620a.js.map

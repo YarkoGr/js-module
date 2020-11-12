@@ -1,0 +1,72 @@
+@import "./_vars";
+@import "./_common";
+@import "../_mixins";
+@import "./_card-body";
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
+//
+.main {
+    @include flex(center,
+    center);
+}
+
+.active {
+    display: flex;
+}
+
+$style: "card";
+.#{$style} {
+    background-color: $bg-color;
+    min-width: 1008px;
+    position: relative;
+    @include flex(center,
+    center,
+    column);
+    padding: 150px 0;
+    &::after {
+        content: "";
+        position: absolute;
+        display: block;
+        background-image: url(../../img/tabs-img/bg-img.png);
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        opacity: 0.2;
+    }
+    &__wrapper {
+        z-index: 1;
+    }
+    &__header {
+        padding: 33px 50px 0 50px;
+        @include flex(center);
+        background-color: $header-color;
+        mix-blend-mode: lighten;
+    }
+    &__header-tabs {
+        @include flex(center,
+        center,
+        column);
+        min-width: 150px;
+        margin-right: 72px;
+        border-bottom: 2px solid transparent;
+        transition: border-color 0.3s ease;
+        outline: none;
+        text-decoration: none;
+        &:hover,
+        &:focus,
+        &:active {
+            border-color: $white;
+            cursor: pointer;
+        }
+        &:last-child {
+            margin-right: 0;
+        }
+        svg {
+            margin-bottom: 15px;
+        }
+    }
+    &__header-tabs-title {
+        color: $white;
+        margin-bottom: 32px;
+    }
+}
