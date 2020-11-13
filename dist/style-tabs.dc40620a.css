@@ -151,6 +151,47 @@ input {
   display: none;
 }
 
+.card-value-progress-ring {
+  stroke: #13e28d;
+  stroke-width: 4px;
+  stroke-dasharray: 201.0619298297 201.0619298297;
+  stroke-dashoffset: 201.0619298297;
+  animation: progress-card-value 4s linear forwards;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}
+@keyframes progress-card-value {
+  0% {
+    stroke-dashoffset: 201.0619298297;
+  }
+  50% {
+    stroke-dashoffset: 142.0837637464;
+  }
+  100% {
+    stroke-dashoffset: 112.5946807047;
+  }
+}
+
+.progress-container svg.progress-ring {
+  height: 70px;
+  width: 70px;
+  position: relative;
+  z-index: 10;
+}
+.progress-container .label {
+  color: #fff;
+  background-color: #212534;
+  height: 70px;
+  width: 70px;
+  font-size: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+}
+
 .main {
   display: flex;
   flex-direction: row;

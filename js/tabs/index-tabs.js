@@ -33,3 +33,23 @@ input.addEventListener("change", function(e) {
         setProgress(input.value);
     }
 });
+
+//
+$(".links").on("click", "a", function() {
+    var percentCurrent = $(".test-progress-bar").attr("data-percent");
+    var percentUpdated = $(this).text();
+    var i = percentCurrent;
+    var animator = setInterval(function() {
+        if (i < percentUpdated) {
+            i++;
+            $(".test-progress-bar").attr("data-percent", i);
+            $(".test-progress-clip").text(i);
+        } else if (i > percentUpdated) {
+            i--;
+            $(".test-progress-bar").attr("data-percent", i);
+            $(".test-progress-clip").text(i);
+        } else {
+            clearInterval(animator);
+        }
+    }, 10);
+});

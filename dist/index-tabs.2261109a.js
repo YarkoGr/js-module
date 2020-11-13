@@ -148,6 +148,25 @@ input.addEventListener("change", function (e) {
   if (input.value < 11 && input.value > -1) {
     setProgress(input.value);
   }
+}); //
+
+$(".links").on("click", "a", function () {
+  var percentCurrent = $(".test-progress-bar").attr("data-percent");
+  var percentUpdated = $(this).text();
+  var i = percentCurrent;
+  var animator = setInterval(function () {
+    if (i < percentUpdated) {
+      i++;
+      $(".test-progress-bar").attr("data-percent", i);
+      $(".test-progress-clip").text(i);
+    } else if (i > percentUpdated) {
+      i--;
+      $(".test-progress-bar").attr("data-percent", i);
+      $(".test-progress-clip").text(i);
+    } else {
+      clearInterval(animator);
+    }
+  }, 10);
 });
 },{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];

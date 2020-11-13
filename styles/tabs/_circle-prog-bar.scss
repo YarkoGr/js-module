@@ -15,3 +15,54 @@ input {
     //     right: 31%;
     //     outline: none;
 }
+
+$value: ( card-value: 44, );
+@each $number,
+$percent in $value {
+    .#{$number}-progress-ring {
+        stroke: $btn-color;
+        stroke-width: 4px;
+        $PI: 3.141592653589793;
+        $circumference: (32 * 2 * $PI);
+        stroke-dasharray: $circumference $circumference;
+        stroke-dashoffset: $circumference;
+        animation: progress-#{$number} 4s linear forwards;
+        // transition: stroke-dashoffset 8s;
+        transform: rotate(-90deg);
+        transform-origin: 50% 50%;
+        $offset: $circumference - (($percent / 100) * $circumference);
+        @keyframes progress-#{$number} {
+            0% {
+                stroke-dashoffset: $circumference;
+            }
+            50% {
+                stroke-dashoffset: $circumference - (($percent / 150) * $circumference);
+            }
+            100% {
+                stroke-dashoffset: $offset;
+            }
+        }
+    }
+}
+
+.progress-container {
+    svg.progress-ring {
+        height: 70px;
+        width: 70px;
+        position: relative;
+        z-index: 10;
+    }
+    .label {
+        color: $white;
+        background-color: $card-body-color;
+        height: 70px;
+        width: 70px;
+        font-size: $h20;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        bottom: 0;
+    }
+}
