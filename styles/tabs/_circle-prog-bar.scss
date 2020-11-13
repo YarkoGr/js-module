@@ -1,0 +1,17 @@
+.progress-ring__circle {
+    transition: 0.35s stroke-dashoffset;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+}
+
+input {
+    display: none;
+    //     width: 27px;
+    //     border: none;
+    //     @include text($h20);
+    //     background-color: transparent;
+    //     position: absolute;
+    //     top: 33%;
+    //     right: 31%;
+    //     outline: none;
+}

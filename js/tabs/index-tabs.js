@@ -12,3 +12,24 @@ $(".card__header-tabs").click(function(event) {
     $(".card-body.active").removeClass("active");
     content.addClass("active");
 });
+//
+let circle = document.querySelector("circle");
+let radius = circle.r.baseVal.value;
+let circumference = radius * 2 * Math.PI;
+
+circle.style.strokeDasharray = `${circumference} ${circumference}`;
+circle.style.strokeDashoffset = `${circumference}`;
+
+function setProgress(percent) {
+    const offset = circumference - (percent / 10) * circumference;
+    circle.style.strokeDashoffset = offset;
+}
+
+let input = document.querySelector("input");
+setProgress(input.value);
+
+input.addEventListener("change", function(e) {
+    if (input.value < 11 && input.value > -1) {
+        setProgress(input.value);
+    }
+});

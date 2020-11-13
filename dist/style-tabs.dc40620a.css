@@ -82,19 +82,16 @@
 .card-body__descript-header-rating {
   width: 70px;
   height: 70px;
-  border-radius: 50%;
-  border: 2px solid #fff;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: nowrap;
+  position: relative;
 }
 .card-body__descript-header-rating-value {
   font-size: 20px;
   font-weight: 400;
   color: white;
   display: block;
+  position: absolute;
+  top: 20px;
+  right: 18px;
 }
 .card-body__descript-text {
   font-size: 14px;
@@ -142,6 +139,16 @@
 .card-body__descript-footer-btn:hover {
   color: #13e28d;
   background-color: #fff;
+}
+
+.progress-ring__circle {
+  transition: 0.35s stroke-dashoffset;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}
+
+input {
+  display: none;
 }
 
 .main {

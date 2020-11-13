@@ -45,13 +45,14 @@ $style: "card-body";
     &__descript-header-rating {
         width: 70px;
         height: 70px;
-        border-radius: 50%;
-        border: 2px solid $white;
-        @include flex(center, center);
+        position: relative;
     }
     &__descript-header-rating-value {
         @include text($h20);
         display: block;
+        position: absolute;
+        top: 20px;
+        right: 18px;
     }
     &__descript-text {
         @include text($h14);
