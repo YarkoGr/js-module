@@ -58,7 +58,7 @@ document.getElementById("btn26-2").onclick = (event) => {
         x = Math.abs(x);
         y = Math.abs(y);
         while (y) {
-            var t = y;
+            let t = y;
             y = x % y;
             x = t;
         }
