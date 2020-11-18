@@ -26,7 +26,6 @@ document.getElementById("btn27-1-1").onclick = (event) => {
             isBought: false,
         },
     ];
-    console.log(shopList);
 
     shopList.sort((a, b) => {
         return a.isBought - b.isBought;
@@ -66,29 +65,27 @@ document.getElementById("btn27-1-2").onclick = (event) => {
             isBought: false,
         },
     ];
-    // console.log(shopList);
 
-    function addToShopList() {
-        const addToList = prompt(
-            `Enter name of product for add to Shop list`,
-            "flour"
-        );
+    const addToList = prompt(
+        `Enter name of product for add to Shop list`,
+        "shugar"
+    );
 
-        for (let i in shopList) {
-            if (addToList === shopList[i].name) {
-                shopList[i].amount += 1;
-            } else {
-                shopList.push({
-                    name: addToList,
-                    amount: 1,
-                    isBought: false,
-                });
-                return shopList;
-            }
+    function addedNameToList() {
+        const find = shopList.find((item) => item.name === addToList);
+        if (find) {
+            find.amount += 1;
+        } else {
+            const newShopLiist = {
+                name: addToList,
+                amount: 1,
+                isBought: false,
+            };
+            shopList.push(newShopLiist);
         }
     }
-    addToShopList(shopList);
-    console.log(shopList);
+    addedNameToList(shopList);
+
     let prinList = "";
     for (let i of shopList) {
         prinList += [i.name] +
@@ -96,5 +93,51 @@ document.getElementById("btn27-1-2").onclick = (event) => {
             "; Is bought = " + [i.isBought] +
             "\n";
     }
-    alert(`Your new shop list is \n ${prinList}`);
+    alert(`Your new shop list after added some product is \n ${prinList}`);
+};
+//
+document.getElementById("btn27-1-3").onclick = (event) => {
+    event.preventDefault();
+    //Покупка продукта. Функция принимает название продукта и отмечает его как купленный.
+    const shopList = [{
+            name: "shugar",
+            amount: 4,
+            isBought: true,
+        },
+        {
+            name: "apples",
+            amount: 2,
+            isBought: false,
+        },
+        {
+            name: "flour",
+            amount: 3,
+            isBought: true,
+        },
+        {
+            name: "strawberry",
+            amount: 6,
+            isBought: false,
+        },
+    ];
+
+    const nameWichBy = prompt(`Enter name of product witch you by`, "apples");
+
+    function checketIsBought() {
+        const find = shopList.find((item) => item.name === nameWichBy);
+        if (find) {
+            find.isBought = true;
+        } else {
+            alert(`Don't have this name in list`);
+        }
+    }
+    checketIsBought(shopList);
+    let prinList = "";
+    for (let i of shopList) {
+        prinList += [i.name] +
+            "  - amount = " + [i.amount] +
+            "; Is bought = " + [i.isBought] +
+            "\n";
+    }
+    alert(`Your new shop list after by some product is \n ${prinList}`);
 };
