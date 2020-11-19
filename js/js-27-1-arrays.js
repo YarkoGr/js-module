@@ -1,31 +1,31 @@
 //
+const shopList = [{
+        name: "shugar",
+        amount: 4,
+        isBought: true,
+    },
+    {
+        name: "apples",
+        amount: 2,
+        isBought: false,
+    },
+    {
+        name: "flour",
+        amount: 3,
+        isBought: true,
+    },
+    {
+        name: "strawberry",
+        amount: 6,
+        isBought: false,
+    },
+];
 //1.Создать массив «Список покупок».
 // Каждый элемент массива является объектом, который содержит название продукта,
 // необходимое количество и куплен или нет. Написать несколько функций для работы с таким массивом
 document.getElementById("btn27-1-1").onclick = (event) => {
     event.preventDefault();
     //Вывод всего списка на экран таким образом, чтобы сначала шли некупленные продукты, а потом – купленные.
-    const shopList = [{
-            name: "shugar",
-            amount: 4,
-            isBought: true,
-        },
-        {
-            name: "apples",
-            amount: 2,
-            isBought: false,
-        },
-        {
-            name: "flour",
-            amount: 3,
-            isBought: true,
-        },
-        {
-            name: "strawberry",
-            amount: 6,
-            isBought: false,
-        },
-    ];
 
     shopList.sort((a, b) => {
         return a.isBought - b.isBought;
@@ -44,27 +44,6 @@ document.getElementById("btn27-1-2").onclick = (event) => {
     event.preventDefault();
     //Добавление покупки в список. Учтите, что при добавлении покупки с уже существующим в списке продуктом,
     //необходимо увеличивать количество в существующей покупке, а не добавлять новую.
-    const shopList = [{
-            name: "shugar",
-            amount: 4,
-            isBought: true,
-        },
-        {
-            name: "apples",
-            amount: 2,
-            isBought: false,
-        },
-        {
-            name: "flour",
-            amount: 3,
-            isBought: true,
-        },
-        {
-            name: "strawberry",
-            amount: 6,
-            isBought: false,
-        },
-    ];
 
     const addToList = prompt(
         `Enter name of product for add to Shop list`,
@@ -99,27 +78,6 @@ document.getElementById("btn27-1-2").onclick = (event) => {
 document.getElementById("btn27-1-3").onclick = (event) => {
     event.preventDefault();
     //Покупка продукта. Функция принимает название продукта и отмечает его как купленный.
-    const shopList = [{
-            name: "shugar",
-            amount: 4,
-            isBought: true,
-        },
-        {
-            name: "apples",
-            amount: 2,
-            isBought: false,
-        },
-        {
-            name: "flour",
-            amount: 3,
-            isBought: true,
-        },
-        {
-            name: "strawberry",
-            amount: 6,
-            isBought: false,
-        },
-    ];
 
     const nameWichBy = prompt(`Enter name of product witch you by`, "apples");
 

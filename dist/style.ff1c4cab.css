@@ -1,0 +1,117 @@
+/* Screens */
+@import url("https://fonts.googleapis.com/css2?family=Turret+Road:wght@200;400;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Turret Road", cursive;
+}
+
+body,
+html {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+a {
+  display: inline-block;
+}
+
+.js-nav {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: teal;
+}
+.js-nav__wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  list-style: none;
+}
+.js-nav__item:not(:last-child) {
+  margin-right: 15px;
+}
+.js-nav__item-link {
+  text-decoration: none;
+  color: black;
+  transition: color 0.3s ease;
+}
+.js-nav__item-link:hover {
+  color: white;
+}
+
+.start-page {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  min-height: 100vh;
+  background: url(/bg.c04a5f46.jpg) no-repeat center;
+  background-size: cover;
+  text-align: center;
+  display: flex;
+}
+.start-page__title {
+  font-size: 36px;
+  font-weight: 700;
+  color: white;
+  background-color: teal;
+  box-shadow: 3px 0px 10px 3px #7cea5c;
+}
+.start-page__list {
+  list-style: none;
+  height: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.start-page__list-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  background-color: teal;
+  border: 2px solid teal;
+  box-shadow: 3px 0px 15px 3px #7cea5c;
+  transition: background-color 0.3s ease-in;
+}
+.start-page__list-item:hover {
+  background-color: #fff;
+  color: teal;
+}
+.start-page__list-item:last-child {
+  margin-right: 0;
+}
+.start-page__list-item-text {
+  display: block;
+  font-size: 20px;
+  font-weight: 400;
+  color: white;
+}
+.start-page__list-item-btn {
+  padding: 20px 35px;
+  text-decoration: none;
+  line-height: 33.5px;
+  font-size: 26px;
+  font-weight: 700;
+  color: white;
+  transition: color 0.5s ease;
+  transition: transform 0.5s ease;
+}
+.start-page__list-item-btn:hover {
+  color: teal;
+  transform: translateY(20px);
+}
+
+/*# sourceMappingURL=/style.ff1c4cab.css.map */

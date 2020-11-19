@@ -3,6 +3,9 @@ import "./js-24-cycles";
 import "./js-25-functions";
 import "./js-26-objects";
 import "./js-27-1-arrays";
+import "./js-27-2-arrays";
+import "./js-27-3-arrays";
+import "./js-27-4-arrays";
 //
 document.getElementById("btn22-1").onclick = (event) => {
     event.preventDefault();
