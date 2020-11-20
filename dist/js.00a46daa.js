@@ -1327,6 +1327,64 @@ document.getElementById("btn27-4-5").onclick = function (event) {
 
   alert("Sort by names:\n".concat(sortByNameOfFaculty));
 };
+},{}],"js/JS-28-classes.js":[function(require,module,exports) {
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+document.getElementById("btn28-1").onclick = function (event) {
+  event.preventDefault(); //Реализовать класс, описывающий окружность. В классе должны быть следующие компоненты:
+  //поле, хранящее радиус окружности;
+  //get-свойство, возвращающее радиус окружности;
+  //set-свойство, устанавливающее радиус окружности;
+  //get-свойство, возвращающее диаметр окружности;
+  //метод, вычисляющий площадь окружности;
+  //метод, вычисляющий длину окружности
+
+  var Circle = /*#__PURE__*/function () {
+    function Circle(radius) {
+      _classCallCheck(this, Circle);
+
+      this.radius = radius;
+    } // get/set of Circle
+
+
+    _createClass(Circle, [{
+      key: "squareOfCircle",
+      value: function squareOfCircle() {
+        return Math.PI * Math.pow(this.radius, 2);
+      }
+    }, {
+      key: "lengthOfCircle",
+      value: function lengthOfCircle() {
+        return Math.PI * this.diametrOfCircle;
+      }
+    }, {
+      key: "changeRadiusOfCircle",
+      get: function get() {
+        return this.radius;
+      },
+      set: function set(newRadius) {
+        this.radius = newRadius;
+      }
+    }, {
+      key: "diametrOfCircle",
+      get: function get() {
+        return this.radius * 2;
+      }
+    }]);
+
+    return Circle;
+  }();
+
+  var circle = new Circle(14);
+  console.log(circle.radius);
+  var changeRadius = prompt("This radius of circle is ".concat(circle.radius, ", enter new radius"), 18);
+  circle.changeRadiusOfCircle = changeRadius;
+  alert("New data of circle\nDiametr = ".concat(circle.diametrOfCircle, "\nSquare = ").concat(circle.squareOfCircle(), "\nLenght of Circle = ").concat(circle.lengthOfCircle()));
+};
 },{}],"js/index.js":[function(require,module,exports) {
 "use strict";
 
@@ -1345,6 +1403,8 @@ require("./js-27-2-arrays");
 require("./js-27-3-arrays");
 
 require("./js-27-4-arrays");
+
+require("./JS-28-classes");
 
 //
 document.getElementById("btn22-1").onclick = function (event) {
@@ -1469,7 +1529,7 @@ document.getElementById("btn22-10").onclick = function (event) {
   alert("your earn money ".concat(moneyFromDeposit));
   alert("we are finish - good job");
 };
-},{"./JS-23-types":"js/JS-23-types.js","./js-24-cycles":"js/js-24-cycles.js","./js-25-functions":"js/js-25-functions.js","./js-26-objects":"js/js-26-objects.js","./js-27-1-arrays":"js/js-27-1-arrays.js","./js-27-2-arrays":"js/js-27-2-arrays.js","./js-27-3-arrays":"js/js-27-3-arrays.js","./js-27-4-arrays":"js/js-27-4-arrays.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./JS-23-types":"js/JS-23-types.js","./js-24-cycles":"js/js-24-cycles.js","./js-25-functions":"js/js-25-functions.js","./js-26-objects":"js/js-26-objects.js","./js-27-1-arrays":"js/js-27-1-arrays.js","./js-27-2-arrays":"js/js-27-2-arrays.js","./js-27-3-arrays":"js/js-27-3-arrays.js","./js-27-4-arrays":"js/js-27-4-arrays.js","./JS-28-classes":"js/JS-28-classes.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -1497,7 +1557,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55570" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63436" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -7,8 +7,13 @@ $style: "js-nav";
         @include flex();
         list-style: none;
     }
+    &__item {
+        text-align: center;
+        padding-right: 8px;
+    }
     &__item:not(:last-child) {
         margin-right: 15px;
+        border-right: 1px solid black;
     }
     &__item-link {
         text-decoration: none;

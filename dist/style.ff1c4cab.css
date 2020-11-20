@@ -37,8 +37,13 @@ a {
   flex-wrap: nowrap;
   list-style: none;
 }
+.js-nav__item {
+  text-align: center;
+  padding-right: 8px;
+}
 .js-nav__item:not(:last-child) {
   margin-right: 15px;
+  border-right: 1px solid black;
 }
 .js-nav__item-link {
   text-decoration: none;

@@ -6,6 +6,7 @@ import "./js-27-1-arrays";
 import "./js-27-2-arrays";
 import "./js-27-3-arrays";
 import "./js-27-4-arrays";
+import "./JS-28-classes";
 //
 document.getElementById("btn22-1").onclick = (event) => {
     event.preventDefault();
